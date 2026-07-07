@@ -1,0 +1,11 @@
+//
+// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+prebuilt_etc {
+    name: "fstab.mi845",
+    src: "fstab.mi845",
+    ramdisk_available: true,
+    vendor: true,
+}

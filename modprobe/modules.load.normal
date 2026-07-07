@@ -1,0 +1,62 @@
+# First to load
+reset-qcom-pdc
+
+# Power and haptics
+qcom_fg
+qcom_smbx
+qcom-spmi-haptics
+
+# Media
+venus-core
+venus-dec
+venus-enc
+
+# Net
+qrtr-smd
+ipa
+ath10k_snoc
+
+# Remote processors
+qcom_q6v5_mss
+qcom_q6v5_pas
+qcom_sysmon
+
+# Audio voice modules
+q6cvp
+q6cvs
+q6mvm
+q6voice-common
+q6voice
+
+# automatically loaded by ueventd
+ath
+ath10k_core
+bluetooth
+btqca
+cfg80211
+edt-ft5x06
+ecc
+ecdh_generic
+hci_uart
+libarc4
+mac80211
+mc
+qcom_common
+qcom_glink_smem
+qcom_pil_info
+qmi_helpers
+qrtr
+qrtr_smd
+reset_qcom_pdc
+rfkill
+snd_compress
+snd_pcm_dmaengine
+snd_soc_core
+snd_soc_qcom_common
+socinfo
+v4l2_mem2mem
+videobuf2_common
+videobuf2_dma_sg
+videobuf2_memops
+videobuf2_v4l2
+videodev

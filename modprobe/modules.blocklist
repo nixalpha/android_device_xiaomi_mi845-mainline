@@ -1,0 +1,2 @@
+# This requires /vendor/firmware_mnt to be mounted first; init loads it after post-fs.
+blocklist venus-core.ko
