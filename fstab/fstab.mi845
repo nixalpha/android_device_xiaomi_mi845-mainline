@@ -4,40 +4,40 @@
 #
 
 # Boot
-/dev/null /boot emmc defaults defaults
+/dev/block/by-name/boot /boot emmc defaults wait,recoveryonly
 
 # Cache
-/dev/block/by-name/cache /cache ext4 nodev,noatime,nosuid,discard check,formattable
-/dev/block/by-name/cache /cache f2fs nodev,noatime,nosuid,discard check,formattable
+/dev/block/by-name/cache /cache ext4 nodev,noatime,nosuid,discard wait,check,formattable
+/dev/block/by-name/cache /cache f2fs nodev,noatime,nosuid,discard wait,check,formattable
 
 # DSP
-/dev/block/by-name/dsp /vendor/dsp ext4 ro,nosuid,nodev,barrier=1 defaults
+/dev/block/by-name/dsp /vendor/dsp ext4 ro,nosuid,nodev,barrier=1 wait
 
 # Firmware
-/dev/block/by-name/modem /vendor/firmware_mnt vfat ro,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware_mnt_file:s0 defaults
-/dev/block/by-name/bluetooth /vendor/bt_firmware vfat ro,shortname=lower,uid=1002,gid=3002,dmask=227,fmask=337,context=u:object_r:firmware_mnt_file:s0 defaults
+/dev/block/by-name/modem /vendor/firmware_mnt vfat ro,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware_mnt_file:s0 wait
+/dev/block/by-name/bluetooth /vendor/bt_firmware vfat ro,shortname=lower,uid=1002,gid=3002,dmask=227,fmask=337,context=u:object_r:firmware_mnt_file:s0 wait
 
 # Logical partitions
-product /product ext4 noatime,ro logical,first_stage_mount
-system /system ext4 noatime,ro logical,first_stage_mount
-system_dlkm /system_dlkm ext4 noatime,ro logical,first_stage_mount
-system_ext /system_ext ext4 noatime,ro logical,first_stage_mount
-odm /odm ext4 noatime,ro logical,first_stage_mount
-vendor /vendor ext4 noatime,ro logical,first_stage_mount
-vendor_dlkm /vendor_dlkm ext4 noatime,ro logical,first_stage_mount
+product /product ext4 noatime,ro wait,logical,first_stage_mount
+system /system ext4 noatime,ro wait,logical,first_stage_mount
+system_dlkm /system_dlkm ext4 noatime,ro wait,logical,first_stage_mount
+system_ext /system_ext ext4 noatime,ro wait,logical,first_stage_mount
+odm /odm ext4 noatime,ro wait,logical,first_stage_mount
+vendor /vendor ext4 noatime,ro wait,logical,first_stage_mount
+vendor_dlkm /vendor_dlkm ext4 noatime,ro wait,logical,first_stage_mount
 
 # Misc
-/dev/block/by-name/misc /misc emmc defaults defaults
+/dev/block/by-name/misc /misc emmc defaults wait
 
 # Persist
-/dev/block/by-name/persist /mnt/vendor/persist ext4 noatime,nosuid,nodev,barrier=1 defaults
+/dev/block/by-name/persist /mnt/vendor/persist ext4 noatime,nosuid,nodev,barrier=1 wait
 
 # Recovery
-/dev/block/by-name/recovery /recovery emmc defaults defaults
+/dev/block/by-name/recovery /recovery emmc defaults wait,recoveryonly
 
 # USB
 /devices/platform/soc@0/a6f8800.usb/*/usb* auto auto defaults voldmanaged=usb:auto,noemulatedsd
 
 # Userdata
-/dev/block/by-name/userdata /data ext4 nodev,noatime,nosuid,discard latemount,check,quota,formattable
-/dev/block/by-name/userdata /data f2fs nodev,noatime,nosuid,discard,reserve_root=32768 latemount,check,quota,formattable
+/dev/block/by-name/userdata /data ext4 nodev,noatime,nosuid,discard latemount,wait,check,fileencryption=ice,quota,formattable
+/dev/block/by-name/userdata /data f2fs nodev,noatime,nosuid,discard,reserve_root=32768 latemount,wait,check,fileencryption=ice,quota,formattable
