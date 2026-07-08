@@ -8,3 +8,11 @@ soong_namespace {
         "device/mainline/common",
     ],
 }
+
+prebuilt_etc {
+    name: "mi845_vendor_qcom_wifi_hal",
+    src: "wifi/vendor_qcom_wifi_hal.xml",
+    filename: "qcom.xml",
+    sub_dir: "wifi/vendor_hals",
+    vendor: true,
+}

@@ -10,6 +10,10 @@ import /vendor/etc/init/hw/init.mainline.qcom.sdm845.rc
 on post-fs
     exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -s -d /vendor/lib/modules --all=/vendor/etc/modules.load.normal
 
+# Remote processors
+on boot
+    trigger start_all_remoteproc
+
 # Mount
 on fs
     # Mount everything that does not require fsck

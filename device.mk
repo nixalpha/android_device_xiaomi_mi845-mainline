@@ -17,8 +17,12 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
-# HIDL
+# HALs
 PRODUCT_PACKAGES += \
+    android.hardware.wifi-service-lazy \
+    disable_configstore \
+    libwifi-hal-qcom \
+    mi845_vendor_qcom_wifi_hal \
     vndservicemanager
 
 # Images
@@ -61,4 +65,5 @@ PRODUCT_SHIPPING_API_LEVEL := 26
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(COMMON_PATH) \
+    hardware/qcom/wlan/legacy \
     kernel/mainline/configs
